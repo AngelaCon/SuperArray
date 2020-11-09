@@ -104,6 +104,6 @@ public class Tester {
         System.out.println(Demo.zip(words,numbers));
         System.out.println("[one, 1, two, 2, three, 3, four, 4, five] (expected)");
         }
-    }
 
-}
+        // this is Steven Lei's Tester
+    }
