@@ -106,7 +106,32 @@ public class SuperArray {
         return array;
     }
 
-    
+
+    public int lastIndexOf(String value){
+        boolean found = false;
+        int index = -1;
+        for (int i = size-1; i >= 0; i--) {
+            if (data[i].equals(value) && found == false) {
+                found = true;
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public boolean equals(SuperArray other){
+        boolean same = true;
+        if (this.size() == other.size()) {
+            for (int i = 0; i < other.size(); i++) {
+                if (!(this.get(i).equals(other.get(i)))) {
+                    same = false;
+                }
+            }
+        }
+        else same = false;
+        return same;
+    }
+
 
 
 }

@@ -20,6 +20,26 @@ public class Demo{
        return arr;
    }
 
+   public static SuperArray zip (SuperArray a, SuperArray b){
+        SuperArray arr = new SuperArray(a.size()+b.size());
+        int min = Math.min(a.size(), b.size());
+        for (int i = 0; i< min;i++){
+            arr.add(a.get(i));
+            arr.add(b.get(i));
+        }
+        if (a.size() == min){
+            for (int i = min; i < (b.size());i++){
+                arr.add(b.get(i));
+            }
+        }
+        if (b.size() == min){
+            for (int i = min; i < (a.size());i++){
+                arr.add(a.get(i));
+            }
+        }
+        return arr;
+    }
+
 
   public static void main(String[]args){
     SuperArray words = new SuperArray();
@@ -27,7 +47,6 @@ public class Demo{
     //grouped to save vertical space
     words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
     words.add("una");    words.add("ebi");     words.add("kani");    words.add("una");
-    words.add("happy");
     words.add("una");    words.add("ebi");     words.add("toro");
 
     arr1.add("kani");   arr1.add("uni"); arr1.add("happy");
