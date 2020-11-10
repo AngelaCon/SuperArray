@@ -8,6 +8,10 @@ public class SuperArray {
     }
 
     public SuperArray(int initialCapacity) {
+
+        if (initialCapacity < 0) {
+            throw new IllegalArgumentException("You can't have negative capacity, dum dum");
+        }
         data = new String[initialCapacity];
         size = 0;
     }
@@ -18,6 +22,9 @@ public class SuperArray {
     }
 
     public String get(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Your index is positively wrong");
+        }
         return data[index];
     }
 
