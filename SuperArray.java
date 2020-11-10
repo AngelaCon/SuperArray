@@ -44,6 +44,9 @@ public class SuperArray {
     }
 
     public void add(int index, String element) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Your index is positively wrong");
+        }
         if (size == data.length) resize();
         for(int i=size-1;i>=index;i--){
             data[i+1] = data[i];
@@ -54,6 +57,9 @@ public class SuperArray {
 
 
     public String set(int index, String element) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Your index is positively wrong");
+        }
         String replace = data[index];
         data[index] = element;
         return replace;
@@ -85,6 +91,9 @@ public class SuperArray {
     }
 
     public String remove(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Your index is positively wrong");
+        }
         for (int i = index; i < size-1; i++) {
             data[i]= data[i+1];
         }
